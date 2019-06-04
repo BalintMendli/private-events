@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def new
-    @event = Event.new
+    @event = current_user.events.build
   end
 
   def create
@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    
+    @event = Event.find(params[:id])
   end
 
   def index
