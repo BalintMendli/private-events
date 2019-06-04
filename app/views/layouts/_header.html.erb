@@ -1,0 +1,9 @@
+<ul class="header">
+  <% if current_user %>
+    <li>Logged in as <%= current_user.name %></li>
+    <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to 'Sign up', sign_up_path %></li>
+    <li><%= link_to 'Sign in', log_in_path %></li>
+  <% end %> 
+</ul>
