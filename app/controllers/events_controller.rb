@@ -14,9 +14,11 @@ class EventsController < ApplicationController
   end
 
   def show
+    
   end
 
   def index
+    @events = Event.all
   end
 
   private
