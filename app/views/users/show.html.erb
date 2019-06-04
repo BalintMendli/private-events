@@ -1,2 +1,5 @@
 <h1>Profile</h1>
 <p><%= @user.name %> (<%= @user.email %>)</p>
+<% if @user.events.any? %>
+<p><%= @user.events.first.name %></p>
+<% end %>

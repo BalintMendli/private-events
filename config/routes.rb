@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post '/sign_ip', to: 'sessions#create'
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :events, only: [:new, :create, :show, :index]
 end
