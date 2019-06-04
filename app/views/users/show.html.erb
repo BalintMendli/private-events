@@ -3,3 +3,15 @@
 <% if @user.events.any? %>
 <p><%= @user.events.first.name %></p>
 <% end %>
+<h2>Previously attended events:</h2>
+<ul>
+<% @prev_events.each do |e| %>
+<li><%= e.name %></li>
+<% end %>
+</ul>
+<h2>Upcoming events:</h2>
+<ul>
+<% @upcoming_events.each do |e| %>
+<li><%= e.name %></li>
+<% end %>
+</ul>
