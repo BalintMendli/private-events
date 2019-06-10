@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'events#index'
   get '/log_in', to: 'sessions#new'
   post '/log_in', to: 'sessions#create'
   delete '/sign_out', to: 'sessions#destroy'
