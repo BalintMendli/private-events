@@ -1,0 +1,7 @@
+<h2>Invite user</h2>
+<%= form_for :attendances, url: attendances_path do |f| %>
+<%= f.hidden_field :event_id, :value => params[:event_id] %>
+<%= f.label :name, 'Name: ' %>
+<%= f.text_field :name %><br>
+<%= f.submit 'Invite user' %>
+<% end %>
