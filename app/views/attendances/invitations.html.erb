@@ -1,0 +1,8 @@
+<h2>My Invitations</h2>
+<% @unconfirmed_events.each do |e| %>
+<li><%= link_to e.name, e %> <%= link_to 'Confirm', invitation_path(:event_id => e), method: :patch %></li>
+<% end %>
+<h2>Confirmed Events</h2>
+<% @confirmed_events.each do |e| %>
+<li><%= link_to e.name, e %></li>
+<% end %>

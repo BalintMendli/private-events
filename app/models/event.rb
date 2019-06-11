@@ -5,4 +5,11 @@ class Event < ApplicationRecord
   scope :past, -> { where('date < ?', DateTime.current) }
   scope :upcoming, -> { where('date > ?', DateTime.current) }
 
+  def unconfirmed_attendees
+    self.attendees.where('confirmation == ?', false)
+  end
+
+  def confirmed_attendees
+    self.attendees.where('confirmation == ?', true)
+  end
 end

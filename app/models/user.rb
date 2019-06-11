@@ -10,4 +10,17 @@ class User < ApplicationRecord
   def upcoming_events
     self.attended_events.where('date > ?', DateTime.current)
   end
+
+  def unconfirmed_events
+    self.attended_events.where('confirmation == ?', false)
+  end
+
+  def confirmed_events
+    self.attended_events.where('confirmation == ?', true)
+  end
+
+  def own_event?(event_id)
+    event = Event.find_by(id: event_id)
+    self.events.include?(event)
+  end
 end

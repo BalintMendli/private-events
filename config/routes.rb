@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   delete '/sign_out', to: 'sessions#destroy'
   get '/sign_up', to: 'users#new'
   post '/sign_in', to: 'sessions#create'
+  get '/invitations', to: 'attendances#invitations'
+  patch '/invitation', to: 'attendances#update'
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
   resources :events, only: [:new, :create, :show, :index]
