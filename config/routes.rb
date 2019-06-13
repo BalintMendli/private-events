@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'events#index'
+  get '/log_in', to: 'sessions#new'
+  post '/log_in', to: 'sessions#create'
+  delete '/sign_out', to: 'sessions#destroy'
+  get '/sign_up', to: 'users#new'
+  post '/sign_in', to: 'sessions#create'
+  get '/invitations', to: 'attendances#invitations'
+  patch '/invitation', to: 'attendances#update'
+  resources :users, only: [:new, :create, :show]
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :events, only: [:new, :create, :show, :index]
+  resources :attendances, only: [:new, :create]
 end

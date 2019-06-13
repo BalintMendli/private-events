@@ -1,0 +1,10 @@
+<h2>Create Event</h2>
+<%= form_for @event do |f| %>
+<%= f.label :name, 'Name: ' %>
+<%= f.text_field :name %><br>
+<%= f.label :description, 'Description: ' %>
+<%= f.text_area :description %><br>
+<%= f.label :date, 'Date: ' %>
+<%= f.date_field :date %><br>
+<%= f.submit 'Create Event' %>
+<% end %>
